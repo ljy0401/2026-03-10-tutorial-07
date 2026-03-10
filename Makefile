@@ -23,6 +23,8 @@ output/coef.csv output/fig.png: code/04-analyze.R output/model.RDS
 
 docs/index.html: index.qmd output/coef.csv output/fig.png
 	quarto render
+	mkdir -p docs/output
+	cp output/fig.png docs/output/fig.png
 
 report:
 	make docs/index.html
